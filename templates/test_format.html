@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Test Format</h2>
+    <p>Below is a breakdown of the GATE test sections, along with descriptions and maximum points for each section.</p>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-book-reader me-2"></i> Reading & Writing</h5>
+                    <p class="card-text">Assesses comprehension and writing skills.</p>
+                    <p class="card-text"><strong>Max Points:</strong> 25</p>
+                    <p class="card-text"><strong>Sample Question:</strong> What is the main theme of the passage?</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-calculator me-2"></i> Math</h5>
+                    <p class="card-text">Tests mathematical reasoning and problem-solving skills.</p>
+                    <p class="card-text"><strong>Max Points:</strong> 25</p>
+                    <p class="card-text"><strong>Sample Question:</strong> Solve for x: 2x + 3 = 7</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-comments me-2"></i> English Communication</h5>
+                    <p class="card-text">Evaluates speaking and listening skills.</p>
+                    <p class="card-text"><strong>Max Points:</strong> 40</p>
+                    <p class="card-text"><strong>Sample Question:</strong> Summarize the main points of the conversation.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-lightbulb me-2"></i> Global Mind</h5>
+                    <p class="card-text">Assesses critical thinking and global awareness.</p>
+                    <p class="card-text"><strong>Max Points:</strong> 10</p>
+                    <p class="card-text"><strong>Sample Question:</strong> Discuss the impact of technology on society.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
