@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Mock Test</h2>
+    <p>Try out our sample test to get a feel for the format and types of questions you'll encounter on the actual GATE test.</p>
+    
+    <div class="mb-3">
+        <a href="{{ url_for('static', filename='mock_test.pdf') }}" download="GATE_Mock_Test.pdf" class="btn btn-primary btn-lg">Download PDF</a>
+        <a href="#" class="btn btn-secondary btn-lg disabled">Take Test Online (coming soon)</a>
+    </div>
+    
+    <h3>Instructions</h3>
+    <ol>
+        <li>Download the PDF and print it out, or take the test on your device.</li>
+        <li>Set a timer for 2 hours to simulate test conditions.</li>
+        <li>Answer all questions to the best of your ability.</li>
+        <li>Review your answers before submitting.</li>
+    </ol>
+</div>
+{% endblock %}
