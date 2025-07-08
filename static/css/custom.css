@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    background-size: cover;
+    background-position: center;
+}
+
+.card-title i {
+    color: #ff7e5f;
+}
