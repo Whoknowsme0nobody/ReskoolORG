@@ -1,398 +1,412 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GATE | Global Academic & Thinking Exam</title>
-  <style>
-    /* Reset & basics */
-    * {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background: #f7f9fc;
-      color: #222;
-      line-height: 1.6;
-      font-size: 16px;
-      scroll-behavior: smooth;
-    }
-    a {
-      color: #1a73e8;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    h1, h2, h3 {
-      color: #1a73e8;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-top: 1rem;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-top: 1.5rem;
-    }
-    h3 {
-      font-size: 1.25rem;
-      margin-top: 1rem;
-    }
-    p {
-      margin-bottom: 1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    /* Container */
-    .container {
-      width: 90%;
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem 0;
-    }
-    /* Header */
-    header {
-      background: white;
-      padding: 1rem 0;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: #1a73e8;
-      letter-spacing: 2px;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    nav a:hover {
-      color: #004db3;
-    }
-    /* Hero Section */
-    .hero {
-      background: #1a73e8;
-      color: white;
-      text-align: center;
-      padding: 5rem 1rem 4rem;
-      border-radius: 0 0 50% 50% / 30% 30% 70% 70%;
-      box-shadow: inset 0 -10px 20px rgb(0 0 0 / 0.15);
-    }
-    .hero h1 {
-      font-size: 4rem;
-      margin-bottom: 0.2rem;
-    }
-    .hero h2 {
-      font-weight: 400;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      font-style: italic;
-      letter-spacing: 1.5px;
-    }
-    .hero .btn {
-      display: inline-block;
-      background: white;
-      color: #1a73e8;
-      font-weight: 700;
-      padding: 1rem 2.5rem;
-      font-size: 1.1rem;
-      border-radius: 30px;
-      box-shadow: 0 5px 15px rgb(26 115 232 / 0.4);
-      transition: all 0.3s ease;
-      cursor: pointer;
-      margin-top: 1.5rem;
-      text-decoration: none;
-    }
-    .hero .btn:hover {
-      background: #004db3;
-      color: white;
-      box-shadow: 0 8px 20px rgb(0 77 179 / 0.6);
-    }
-    /* Sections */
-    section {
-      margin: 4rem 0;
-      padding-bottom: 1rem;
-    }
-    section h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-      color: #0b3d91;
-      border-bottom: 3px solid #1a73e8;
-      display: inline-block;
-      padding-bottom: 0.2rem;
-    }
-    /* Cards for exam sections */
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-    .card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
-      padding: 1.8rem;
-      max-width: 280px;
-      flex: 1 1 280px;
-      text-align: left;
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgb(26 115 232 / 0.3);
-    }
-    .card h3 {
-      margin-bottom: 0.7rem;
-      color: #1a73e8;
-    }
-    .card p {
-      font-size: 0.95rem;
-      color: #444;
-    }
-    /* Buttons */
-    .btn-primary {
-      background: #1a73e8;
-      color: white;
-      padding: 0.9rem 2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      display: inline-block;
-      box-shadow: 0 5px 15px rgb(26 115 232 / 0.4);
-      transition: background 0.3s ease;
-      cursor: pointer;
-      margin-top: 1rem;
-      text-decoration: none;
-      text-align: center;
-    }
-    .btn-primary:hover {
-      background: #004db3;
-      box-shadow: 0 8px 20px rgb(0 77 179 / 0.6);
-    }
-    /* Lists */
-    ul {
-      max-width: 700px;
-      margin: 1rem auto 2rem;
-      list-style-type: disc;
-      padding-left: 1.3rem;
-      color: #333;
-    }
-    ul li {
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
-    }
-    /* Footer */
-    footer {
-      background: #1a73e8;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-      margin-top: 4rem;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #d0e1ff;
-      font-weight: 600;
-    }
-    /* Responsive */
-    @media (max-width: 700px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-      .hero h2 {
-        font-size: 1.2rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATE - Global Academic & Thinking Exam</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --background: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --accent: #8b5cf6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+        
+        .hero {
+            padding: 5rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--text-secondary);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+        
+        .section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #334155;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .news-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            border: 1px solid #334155;
+        }
+        
+        .news-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #334155;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .news-date {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .news-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--card-bg);
+            padding: 3rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid #334155;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #334155;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #334155;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">GATE<span>.</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pilot.html">Pilot Tester</a></li>
+                    <li><a href="team.html">Join Team</a></li>
+                    <li><a href="numbers.html">Numbers</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <header>
-    <div class="container">
-      <div class="logo">GATE</div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#exam">Exam Overview</a>
-        <a href="#register">Register</a>
-        <a href="#prepare">Prepare</a>
-        <a href="#join">Join Us</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Breaking Barriers in Standardized Testing</h1>
+                <p>GATE is a nonprofit initiative creating an affordable, accessible alternative to traditional exams like the SAT, ACT, and TOEFL. Built by students, for students.</p>
+                <a href="pilot.html" class="cta-button">Become a Pilot Tester</a>
+            </div>
+        </section>
 
-  <section class="hero">
-    <h1>GATE</h1>
-    <h2>Global Academic & Thinking Exam</h2>
-    <p><em>By the people. For the future.</em></p>
-    <a href="#register" class="btn">Register Now</a>
-  </section>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Our Mission</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Equitable Access</h3>
+                        <p>We're eliminating financial and logistical barriers that prevent millions of students from accessing higher education opportunities.</p>
+                        <a href="about.html" class="cta-button">Learn More</a>
+                    </div>
+                    <div class="card">
+                        <h3>Innovative Structure</h3>
+                        <p>Our modular 2-hour 55-minute exam combines academic knowledge with critical thinking skills in a streamlined format.</p>
+                        <a href="about.html#structure" class="cta-button">View Structure</a>
+                    </div>
+                    <div class="card">
+                        <h3>Student-Centered</h3>
+                        <p>Built by students, for students. We understand the challenges and are creating solutions that work for everyone.</p>
+                        <a href="team.html" class="cta-button">Join Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="about" class="container">
-    <h2>What is GATE?</h2>
-    <p>GATE is a nonprofit standardized test designed to provide a fair, affordable, and accessible alternative to traditional exams like the SAT, ACT, and TOEFL. Built by students, for students, it measures essential academic and communication skills required for higher education and life success worldwide.</p>
-  </section>
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="news-section">
+                    <!-- Easy to edit news section -->
+                    <div class="news-item">
+                        <div class="news-date">June 15, 2024</div>
+                        <h3 class="news-title">Pilot Testing Program Launch</h3>
+                        <p>We're now accepting applications for our pilot testing program. Help us shape the future of standardized testing by participating in our initial test development phase.</p>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">May 30, 2024</div>
+                        <h3 class="news-title">Team Expansion</h3>
+                        <p>Our volunteer team has grown to over 50 passionate individuals from around the world. We're always looking for more contributors to join our mission.</p>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">April 12, 2024</div>
+                        <h3 class="news-title">New Test Structure Finalized</h3>
+                        <p>After extensive research and community feedback, we've finalized our modular test structure with built-in breaks for a better testing experience.</p>
+                    </div>
+                    
+                    <!-- To add new news, simply copy and paste the div below and update content -->
+                    <!--
+                    <div class="news-item">
+                        <div class="news-date">Date</div>
+                        <h3 class="news-title">News Title</h3>
+                        <p>News content goes here...</p>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <section id="exam" class="container">
-    <h2>Exam Overview</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Reading & Writing</h3>
-        <p>Comprehension, grammar, logical reasoning, and expression. (25 points)</p>
-      </div>
-      <div class="card">
-        <h3>Mathematics</h3>
-        <p>Algebra, data interpretation, problem solving without calculators. (25 points)</p>
-      </div>
-      <div class="card">
-        <h3>English Communication</h3>
-        <p>Listening, speaking clarity, vocabulary, and grammar. (40 points)</p>
-      </div>
-      <div class="card">
-        <h3>Global Mind</h3>
-        <p>Critical thinking, ethics, and social awareness. (10 points)</p>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:1.5rem;"><strong>Total Time:</strong> 2 hours 30 minutes | <strong>Max Score:</strong> 100 points</p>
-  </section>
-
-  <section id="register" class="container">
-    <h2>How to Register</h2>
-    <p>Students register through their schools or directly online for the Evalmee proctored exam. Registration fees are $50 for domestic and $100 for international candidates.</p>
-    <a href="https://your-registration-link.com" target="_blank" class="btn-primary">Register Here</a>
-  </section>
-
-  <section id="prepare" class="container">
-    <h2>How to Prepare</h2>
-    <ul>
-      <li>Download the <a href="https://github.com/Whoknowsme0nobody/GATE/blob/main/GATEOfficialGuide.pdf" target="_blank">Official GATE Guide PDF</a> for detailed instructions and sample questions.</li>
-      <li>Practice past questions and exercises available on our YouTube channel <a href="https://www.youtube.com/@GATEforyou" target="_blank">@GATEforyou</a>.</li>
-      <li>Join upcoming webinars and community study groups announced on our Instagram <a href="https://www.instagram.com/gateforall" target="_blank">@gateforall</a>.</li>
-      <li>Ensure a quiet, distraction-free environment for the exam day, especially if taking the Evalmee online test.</li>
-    </ul>
-  </section>
-
-  <section id="join" class="container">
-    <h2>Join the Movement</h2>
-    <p>GATE thrives because of passionate volunteers, donors, and advocates worldwide. You can contribute by:</p>
-    <ul>
-      <li>Volunteering your skills in test development, translation, or proctoring</li>
-      <li>Donating to support test outreach and accessibility efforts</li>
-      <li>Sharing GATE with your school and community to spread awareness</li>
-    </ul>
-    <p>Contact us to get involved and help shape the future of education.</p>
-  </section>
-
-  <section id="contact" class="container">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:belm8582@gmail.com">belm8582@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/Whoknowsme0nobody/GATE" target="_blank">https://github.com/Whoknowsme0nobody/GATE</a></p>
-    <p>YouTube: <a href="https://www.youtube.com/@GATEforyou" target="_blank">@GATEforyou</a></p>
-    <p>Instagram: <a href="https://www.instagram.com/gateforall" target="_blank">@gateforall</a></p>
-  </section>
-<section id="miniexam" class="container">
-  <h2>GATE Mini Pilot Exam</h2>
-  <p style="text-align:center; font-style: italic;">Global Academic & Thinking Exam<br />Founder: Amine Belachhab</p>
-
-  <h3>Instructions:</h3>
-  <ul>
-    <li>Total time: <strong>30 minutes max</strong></li>
-    <li>Answer all questions.</li>
-    <li>No calculators or external help.</li>
-    <li>Write or type your answers clearly.</li>
-  </ul>
-
-  <h3>Section 1: Reading & Writing (6 points)</h3>
-  <p><strong>Passage:</strong><br />
-  Climate change causes different effects worldwide. Some regions face droughts, others flooding. The author argues that human activity significantly contributes to these changes.</p>
-
-  <ol>
-    <li>What is the main idea of the passage?
-      <ul style="list-style-type: upper-alpha;">
-        <li>Climate change affects all regions the same way.</li>
-        <li>Human activity has no role in climate change.</li>
-        <li>Climate change has varied effects worldwide.</li>
-        <li>Flooding is the only result of climate change.</li>
-      </ul>
-    </li>
-    <li>Correct the sentence:<br />
-      <em>The human activities is contribute to climate change effects.</em><br />
-      <strong>Rewrite the sentence correctly:</strong> _______________________________
-    </li>
-  </ol>
-
-  <h3>Section 2: Mathematics (6 points)</h3>
-  <ol start="3">
-    <li>If a company’s profits increase by 15% each year, what is the total growth after 2 years? <br />(Express as a percentage rounded to two decimals)</li>
-    <li>Solve for <strong>x</strong>:<br />
-      \( 3x - 7 = 11 \)
-    </li>
-  </ol>
-
-  <h3>Section 3: English Communication (7 points)</h3>
-  <p><strong>Dialogue:</strong></p>
-  <blockquote>
-    Person A: “The project deadline is tight, we need to finish soon.”<br />
-    Person B: “I agree, but if we focus, we can make it.”
-  </blockquote>
-  <ol start="5">
-    <li>What is the main concern of the speakers?
-      <ul style="list-style-type: upper-alpha;">
-        <li>They have too much time.</li>
-        <li>The deadline is approaching fast.</li>
-        <li>The project is irrelevant.</li>
-        <li>They are unsure about the project.</li>
-      </ul>
-    </li>
-    <li>Choose the correct sentence:<br />
-      <em>I will be going to the meeting tomorrow.</em><br />
-      <ul style="list-style-type: upper-alpha;">
-        <li>Correct</li>
-        <li>Incorrect — Rewrite the sentence correctly: ______________________</li>
-      </ul>
-    </li>
-  </ol>
-
-  <h3>Section 4: Global Mind (6 points)</h3>
-  <p>Write a short paragraph (150–200 words):</p>
-  <p><em>Imagine you have $1000 to improve your local community. Describe your plan and explain why you chose it.</em></p>
-
-  <h3>Feedback (Optional)</h3>
-  <p><strong>Send your answers and feedback directly to <a href="mailto:belm8582@gmail.com">belm8582@gmail.com</a></strong></p>
-  <ul>
-    <li>What did you like about this test?</li>
-    <li>What was difficult?</li>
-    <li>Any suggestions to improve GATE?</li>
-  </ul>
-</section>
-
-  <footer>
-    &copy; 2025 GATE Initiative. All rights reserved.
-  </footer>
-
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GATE</h3>
+                    <p>Global Academic & Thinking Exam - Breaking barriers in standardized testing.</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/gateforall" target="_blank">IG</a>
+                        <a href="https://youtube.com/@GATEforyou" target="_blank">YT</a>
+                        <a href="https://github.com/Whoknowsme0nobody/GATE" target="_blank">GH</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pilot.html">Pilot Tester Registration</a></li>
+                        <li><a href="team.html">Join Our Team</a></li>
+                        <li><a href="numbers.html">Impact Numbers</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:gateforallofyou@gmail.com">gateforallofyou@gmail.com</a></li>
+                        <li><a href="mailto:belm8582@gmail.com">belm8582@gmail.com</a></li>
+                        <li><a href="https://instagram.com/gateforall" target="_blank">@gateforall</a></li>
+                        <li><a href="https://youtube.com/@GATEforyou" target="_blank">@GATEforyou</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 GATE Initiative. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
